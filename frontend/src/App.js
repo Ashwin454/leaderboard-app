@@ -36,7 +36,7 @@ const App = () => {
   useEffect(() => {             //Fetches the list of users and history on loading
     fetchUsers();
     fetchHistory();
-  }, []);
+  }, []);   // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="app-container">
