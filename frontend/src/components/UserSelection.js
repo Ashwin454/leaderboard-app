@@ -5,7 +5,7 @@ const UserSelection = ({ users, selectedUser, setSelectedUser, setMessage, fetch
 
   const handleClaim = async () => {         //Function for handling the claim points
     try {
-      const response = await fetch('http://localhost:8080/api/v1/users/claim', {
+      const response = await fetch('https://leaderboard-app-iq8m.onrender.com/api/v1/users/claim', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId: selectedUser }),
@@ -36,7 +36,7 @@ const UserSelection = ({ users, selectedUser, setSelectedUser, setMessage, fetch
       return;
     }
     try {
-      const response = await fetch('http://localhost:8080/api/v1/users/create', {
+      const response = await fetch('https://leaderboard-app-iq8m.onrender.com/api/v1/users/create', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: newUserName }),

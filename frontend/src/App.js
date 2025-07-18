@@ -12,7 +12,7 @@ const App = () => {
 
   const fetchUsers = async () => {      //Fetching the list of users
     try {
-      const response = await fetch('http://localhost:8080/api/v1/users/get');
+      const response = await fetch('https://leaderboard-app-iq8m.onrender.com/api/v1/users/get');
       const data = await response.json();
       setUsers(data);
       if (data.length > 0 && !selectedUser) {
@@ -25,7 +25,7 @@ const App = () => {
 
   const fetchHistory = async () => {    //Fetching History of claims
     try {
-      const response = await fetch('http://localhost:8080/api/v1/history/get');
+      const response = await fetch('https://leaderboard-app-iq8m.onrender.com/api/v1/history/get');
       const data = await response.json();
       setHistory(data);
     } catch (error) {
@@ -37,7 +37,7 @@ const App = () => {
     fetchUsers();
     fetchHistory();
   }, []);   // eslint-disable-line react-hooks/exhaustive-deps
-
+  // The comment above is to suppress the eslint warning because fetchUsers is a stable external function and doesn’t rely on changing state. So, its safe to use it here.
   return (
     <div className="app-container">
       <div className="main-content">
