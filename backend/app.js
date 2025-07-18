@@ -8,7 +8,7 @@ const historyRouter = require("./routes/historyRoutes.js");
 app.set('trust proxy', true);
 
 app.use(cors({
-    origin: ['http://localhost:3000'],
+    origin: ['http://localhost:3000', 'https://leaderboard-app-1.netlify.app'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true
 }));
